@@ -1,0 +1,35 @@
+Mangea Liviu Darius 324CA
+
+Problema 1
+
+In problema 1 am o complexitate de O(n^2) ceea ce nu este chiar optim mai ales
+ca un test a picat. Am tinut un vector, index, in care am calculat cate perechi
+au diferenta master - slave mai mica decat diferenta perechea respectiva. Apoi
+am pus in suma cei mai convenabili jumatate din slaves si cei mai convenabili
+jumatate din masters urmand ca apoi sa corectez erorile pentru a se respecta
+regula de imperechere. Dupa ce fac interschimbari masters->slave pentru 
+a se respecta regula, fac acelasi numar de interschimbari slave->master pentru 
+a ramane cate jumatate din fiecare, cu conditia sa nu stric regula.
+
+Problema 2
+
+In problema 2 am folosit Fibonacci generalizat in care in vectorul de termeni 
+initiali este un vector de k + 1 elemente cu puteri ale lui 2 iar matricea A
+este o matrice de k + 1 pe k + 1 in care avem 1 pe diagonala de deasupra celei
+principale si 1 pe ultima linie astfel incat k termeni sa avanseze cu o pozitie
+iar ultima pozitie sa se calculeze ca suma celor dinainte. Apoi, folosind
+asociativitatea inmultirii de matrici, ridicam A la puterea n - k pt a afla
+cel de-al N-lea termen. La final inmultim matricea rezultata cu vectorul
+termenilor initiali pt a afla numarul de posibilitati pt o coloana iar apoi 
+ridicam la puterea m pt a afla numarul total de cadre. Toate inmultirile se fac
+modulo 40009. Am folosit tipul long long desi nu sunt sigur daca era necesar,
+dar am fost presat de timp.
+
+Problema 3
+
+In problema 3 numarul de cadre gresite este 2^n - numarul_de_cadre_corecte.
+Am calculat numarul de cadre corecte folosind algoritmul de la problema 2 si
+numarul de cadre gresite. Rezultatul final este numar_cadre_corecte *
+numar_cadre_gresite * combinari de m1 + m2 luate cate m1 (sau m2,acelasi lucru).
+Se inmulteste cu combinari pentru a considera toate combinarile de coloane,
+intre cele corecte si incorecte.
